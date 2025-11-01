@@ -11,13 +11,17 @@
                     Orientation="Horizontal" 
                     HorizontalAlignment="Right"
                     Margin="5">
-            <Button Background="Red" Content="R" Click="Red" Margin="2"></Button>
-            <Button Background="Blue" Content="B" Click="Red" Margin="2"></Button>
-            <Button Background="yellow" Content="Y" Click="Red" Margin="2"></Button>
+            <Button Name="RedButton" Background="Red" Content="R" Click="Red_Click" Margin="2"></Button>
+            <Button Name="BlueButton" Background="Blue" Content="B" Click="Blue_Click" Margin="2"></Button>
+            <Button Name="YellowButton" Background="Yellow" Content="Y" Click="Yellow_Click" Margin="2"></Button>
+            <Button Name="BlackButton" Background="Black" Content="B" Click="Black_Click" Margin="2"></Button>
         </StackPanel>
         
-        <Panel>
-            <TextBlock> djsngfjkdgjn</TextBlock>
-        </Panel>
+        <Canvas Name="DrawingCanvas" 
+                Background="White"
+                PointerPressed="DrawingCanvas_PointerPressed"
+                PointerMoved="DrawingCanvas_PointerMoved"
+                PointerReleased="DrawingCanvas_PointerReleased">
+        </Canvas>
     </DockPanel>
 </Window>
