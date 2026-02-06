@@ -2,20 +2,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
         x:Class="PaintD.MainWindow"
         Title="PaintD">
 
     <DockPanel>
-        <StackPanel DockPanel.Dock="Top" 
-                    Orientation="Horizontal" 
+<!-- меню начало-->
+        <Border DockPanel.Dock="Top" 
+                Background="Gray" 
+                Height="60"
+                IsHitTestVisible="True">
+            <Grid>
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Margin="6">
+                    <TextBlock Text="Инструменты:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <Button Name="SelectToolButton" Content="Выбор" Click="SelectTool_Click" Margin="2" Padding="10,5"/>
+                    <Button Name="CircleToolButton" Content="Круг" Click="CircleTool_Click" Margin="2" Padding="10,5"/>
+                    <Button Name="RectangleToolButton" Content="Прямоугольник" Click="RectangleTool_Click" Margin="2" Padding="10,5"/>
+                </StackPanel>
+            <StackPanel Orientation="Horizontal" 
                     HorizontalAlignment="Right"
-                    Margin="5">
-            <Button Name="RedButton" Background="Red" Content="R" Click="Red_Click" Margin="2"></Button>
-            <Button Name="BlueButton" Background="Blue" Content="B" Click="Blue_Click" Margin="2"></Button>
-            <Button Name="YellowButton" Background="Yellow" Content="Y" Click="Yellow_Click" Margin="2"></Button>
-            <Button Name="BlackButton" Background="Black" Content="B" Click="Black_Click" Margin="2"></Button>
+                        VerticalAlignment="Center"
+                        Margin="6">
+                    <TextBlock Text="Цвета:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <Button Name="RedButton" Background="Red" Content="R" Click="Red_Click" Margin="1"></Button>
+                <Button Name="BlueButton" Background="Blue" Content="B" Click="Blue_Click" Margin="1"></Button>
+                <Button Name="YellowButton" Background="Yellow" Content="Y" Click="Yellow_Click" Margin="1"></Button>
+                <Button Name="BlackButton" Background="Black" Content="B" Click="Black_Click" Margin="1"></Button>
         </StackPanel>
+            </Grid>
+        </Border>
+        
+        <Separator DockPanel.Dock="Top" Height="1"/>
+
         
         <Canvas Name="DrawingCanvas" 
                 Background="White"
